@@ -1,0 +1,12 @@
+pipeline {
+    agent { label 'slave-agent' }
+
+    stages {
+        stage('Hello') {
+            steps {
+                sh 'touch helo.txt'
+                git 'https://github.com/handuy/nodejs-todolist.git'
+            }
+        }
+    }
+}
